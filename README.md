@@ -47,7 +47,7 @@ The server is fully provisioned using Terraform and automatically configured at 
 ---
 
 ## 🏗 Architecture
-
+```
 Internet
 │
 Internet Gateway
@@ -61,6 +61,7 @@ Security Group
 EC2 Instance
 │
 Nginx Web Server
+```
 
 📸 Screenshot  
 ![Architecture](architecture-diagram.png)
@@ -87,6 +88,7 @@ The infrastructure runs inside a custom AWS Virtual Private Cloud (VPC) with a p
 
 ## 📂 Project Structure
 
+```
 terraform-aws-ec2-webserver
 │
 ├── provider.tf
@@ -97,8 +99,9 @@ terraform-aws-ec2-webserver
 ├── user-data.sh
 ├── .gitignore
 ├── README.md
-│
-└── screenshots/
+├── Architecture
+└── screenshots
+```
 
 ---
 
@@ -138,7 +141,7 @@ Terraform provisions the infrastructure and launches the EC2 instance.
 The EC2 instance automatically installs and starts Nginx during launch using a bootstrap script.
 
 **user-data.sh**
-
+```
 #!/bin/bash
 
 yum update -y
@@ -148,7 +151,7 @@ systemctl start nginx
 systemctl enable nginx
 
 echo "<h1>Terraform Production Project</h1>" > /usr/share/nginx/html/index.html
-
+```
 
 This ensures the web server is fully configured **without manual intervention**.
 
@@ -183,11 +186,11 @@ http://<EC2-PUBLIC-IP>
 Terraform provides useful information after deployment.
 
 Example output:
-
+```
 Outputs:
 instance_public_ip = 54.xxx.xxx.xxx
 instance_id = i-xxxxxxxx
-
+```
 📸 Screenshot  
 ![Terraform Outputs](terraform-output.png)
 
@@ -217,6 +220,8 @@ By inspecting **cloud-init logs**, the correct installation method using **Amazo
 
 This troubleshooting step ensured a fully automated and reliable deployment.
 
+You can write reusable and sharable code using terraform module.
+
 ---
 
 # 🚀 Future Improvements
@@ -231,6 +236,8 @@ This troubleshooting step ensured a fully automated and reliable deployment.
 # 👤 Author
 
 **Chisom Eze**
+```
 Cloud Engineer 
-Focused on building reliable cloud infrastructure using Infrastructure as Code.
+Focused on building reliable, and production ready cloud infrastructure using Infrastructure as Code.
+```
 
