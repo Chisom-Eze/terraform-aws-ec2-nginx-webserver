@@ -62,9 +62,8 @@ EC2 Instance
 │
 Nginx Web Server
 ```
-
 📸 Screenshot  
-![Architecture](architecture-diagram.png)
+![Architecture](architecture/architecture-diagram.png)
 ---
 
 Infrastructure deployed:
@@ -84,7 +83,7 @@ Infrastructure deployed:
 The infrastructure runs inside a custom AWS Virtual Private Cloud (VPC) with a public subnet and internet gateway to allow inbound web traffic.
 
 📸 Screenshot  
-![VPC Created](vpc-created.png)
+![VPC Created](screenshots/vpc-created.png)
 
 ## 📂 Project Structure
 
@@ -113,7 +112,7 @@ terraform init
 Downloads the AWS provider and initializes the working directory.
 
 📸 Screenshot
-![Terraform intitialization](terraform-init.png)
+![Terraform intitialization](screenshots/terraform-init.png)
 
 ## 2️⃣ Review Infrastructure Plan
 
@@ -121,7 +120,7 @@ terraform plan
 This command previews the infrastructure Terraform will create.
 
 📸 Screenshot  
-![Terraform plan](terraform-plan.png)
+![Terraform plan](screenshots/terraform-plan.png)
 
 ---
 
@@ -131,8 +130,8 @@ terraform apply
 Terraform provisions the infrastructure and launches the EC2 instance.
 
 📸 Screenshot  
-![Terraform Apply](terraform-apply-success.png)
-![Instance Running](ec2-instance-running.png)
+![Terraform Apply](screenshots/terraform-apply-success.png)
+![Instance Running](screenshots/ec2-instance-running.png)
 
 ---
 
@@ -167,7 +166,7 @@ The Security Group allows inbound access on:
 |  80  | HTTP |
 
 📸 Screenshot  
-![Security Group](security-group-rules.png)
+![Security Group](screenshots/security-group-rules.png)
 
 ---
 
@@ -177,7 +176,7 @@ Once the infrastructure is deployed, the web server becomes accessible using the
 http://<EC2-PUBLIC-IP>
 
 📸 Screenshot  
-![Nginx Active](nginx-browser-success.png)
+![Nginx Active](screenshots/nginx-browser-success.png)
 
 ---
 
@@ -192,7 +191,7 @@ instance_public_ip = 54.xxx.xxx.xxx
 instance_id = i-xxxxxxxx
 ```
 📸 Screenshot  
-![Terraform Outputs](terraform-output.png)
+![Terraform Outputs](screenshots/terraform-output.png)
 
 ---
 
